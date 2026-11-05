@@ -1,0 +1,71 @@
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ densenet121 (Functional)    (None, 1024)              7037504   
+                                                                 
+ dense (Dense)               (None, 3)                 3075      
+                                                                 
+=================================================================
+Total params: 7040579 (26.86 MB)
+Trainable params: 6956931 (26.54 MB)
+Non-trainable params: 83648 (326.75 KB)
+_________________________________________________________________
+Epoch 1/10
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1705898848.787952  216509 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+379/379 [==============================] - 99s 144ms/step - loss: 0.2140 - accuracy: 0.9382 - val_loss: 0.1218 - val_accuracy: 0.9508
+Epoch 2/10
+379/379 [==============================] - 34s 90ms/step - loss: 0.0487 - accuracy: 0.9833 - val_loss: 0.0761 - val_accuracy: 0.9746
+Epoch 3/10
+379/379 [==============================] - 34s 91ms/step - loss: 0.0476 - accuracy: 0.9843 - val_loss: 0.0785 - val_accuracy: 0.9726
+Epoch 4/10
+379/379 [==============================] - 35s 92ms/step - loss: 0.0371 - accuracy: 0.9876 - val_loss: 0.1479 - val_accuracy: 0.9584
+Epoch 5/10
+379/379 [==============================] - 34s 90ms/step - loss: 0.0367 - accuracy: 0.9865 - val_loss: 0.1066 - val_accuracy: 0.9710
+Epoch 6/10
+379/379 [==============================] - 34s 89ms/step - loss: 0.0303 - accuracy: 0.9896 - val_loss: 0.0659 - val_accuracy: 0.9756
+Epoch 7/10
+379/379 [==============================] - 34s 91ms/step - loss: 0.0254 - accuracy: 0.9911 - val_loss: 0.2082 - val_accuracy: 0.9601
+Epoch 8/10
+379/379 [==============================] - 34s 91ms/step - loss: 0.0282 - accuracy: 0.9908 - val_loss: 0.0432 - val_accuracy: 0.9858
+Epoch 9/10
+379/379 [==============================] - 34s 90ms/step - loss: 0.0174 - accuracy: 0.9936 - val_loss: 0.0651 - val_accuracy: 0.9799
+Epoch 10/10
+379/379 [==============================] - 34s 91ms/step - loss: 0.0175 - accuracy: 0.9944 - val_loss: 0.0464 - val_accuracy: 0.9858
+379/379 [==============================] - 9s 22ms/step
+95/95 [==============================] - 2s 20ms/step
+
+Matriz de confusão do treino
+[[2872    0    8]
+ [   0 1078    1]
+ [   7    3 8153]]
+
+Matriz de confusão do teste
+[[ 717    1   18]
+ [   1  259    6]
+ [  14    3 2012]]
+/nClassification Report do treino
+
+              precision    recall  f1-score   support
+
+           0     0.9976    0.9972    0.9974      2880
+           1     0.9972    0.9991    0.9981      1079
+           2     0.9989    0.9988    0.9988      8163
+
+    accuracy                         0.9984     12122
+   macro avg     0.9979    0.9984    0.9981     12122
+weighted avg     0.9984    0.9984    0.9984     12122
+
+/nClassification Report do teste
+
+              precision    recall  f1-score   support
+
+           0     0.9795    0.9742    0.9768       736
+           1     0.9848    0.9737    0.9792       266
+           2     0.9882    0.9916    0.9899      2029
+
+    accuracy                         0.9858      3031
+   macro avg     0.9842    0.9798    0.9820      3031
+weighted avg     0.9858    0.9858    0.9858      3031
+

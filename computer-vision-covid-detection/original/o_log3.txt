@@ -1,0 +1,90 @@
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 98, 98, 32)        896       
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 49, 49, 32)        0         
+ D)                                                              
+                                                                 
+ conv2d_1 (Conv2D)           (None, 47, 47, 16)        4624      
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 23, 23, 16)        0         
+ g2D)                                                            
+                                                                 
+ conv2d_2 (Conv2D)           (None, 21, 21, 16)        2320      
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 10, 10, 16)        0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 1600)              0         
+                                                                 
+ dense (Dense)               (None, 512)               819712    
+                                                                 
+ dense_1 (Dense)             (None, 256)               131328    
+                                                                 
+ dense_2 (Dense)             (None, 3)                 771       
+                                                                 
+=================================================================
+Total params: 959651 (3.66 MB)
+Trainable params: 959651 (3.66 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/10
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1705901386.999980  239690 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+379/379 [==============================] - 8s 11ms/step - loss: 0.4604 - accuracy: 0.8000 - val_loss: 0.3531 - val_accuracy: 0.8373
+Epoch 2/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.2828 - accuracy: 0.8826 - val_loss: 0.3788 - val_accuracy: 0.8416
+Epoch 3/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.2221 - accuracy: 0.9126 - val_loss: 0.2319 - val_accuracy: 0.9113
+Epoch 4/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.1824 - accuracy: 0.9285 - val_loss: 0.2167 - val_accuracy: 0.9152
+Epoch 5/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.1550 - accuracy: 0.9413 - val_loss: 0.1897 - val_accuracy: 0.9330
+Epoch 6/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.1255 - accuracy: 0.9516 - val_loss: 0.2440 - val_accuracy: 0.9178
+Epoch 7/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.1068 - accuracy: 0.9582 - val_loss: 0.1947 - val_accuracy: 0.9400
+Epoch 8/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.0867 - accuracy: 0.9683 - val_loss: 0.1897 - val_accuracy: 0.9376
+Epoch 9/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.0724 - accuracy: 0.9734 - val_loss: 0.1807 - val_accuracy: 0.9363
+Epoch 10/10
+379/379 [==============================] - 3s 7ms/step - loss: 0.0561 - accuracy: 0.9811 - val_loss: 0.2193 - val_accuracy: 0.9373
+379/379 [==============================] - 1s 3ms/step
+95/95 [==============================] - 0s 2ms/step
+
+Matriz de confusão do treino
+[[2893    1   29]
+ [   0 1015   49]
+ [ 175    1 7959]]
+
+Matriz de confusão do teste
+[[ 648    6   39]
+ [   4  250   27]
+ [ 109    5 1943]]
+/nClassification Report do treino
+
+              precision    recall  f1-score   support
+
+           0     0.9430    0.9897    0.9658      2923
+           1     0.9980    0.9539    0.9755      1064
+           2     0.9903    0.9784    0.9843      8135
+
+    accuracy                         0.9790     12122
+   macro avg     0.9771    0.9740    0.9752     12122
+weighted avg     0.9796    0.9790    0.9791     12122
+
+/nClassification Report do teste
+
+              precision    recall  f1-score   support
+
+           0     0.8515    0.9351    0.8913       693
+           1     0.9579    0.8897    0.9225       281
+           2     0.9671    0.9446    0.9557      2057
+
+    accuracy                         0.9373      3031
+   macro avg     0.9255    0.9231    0.9232      3031
+weighted avg     0.9398    0.9373    0.9379      3031
+
